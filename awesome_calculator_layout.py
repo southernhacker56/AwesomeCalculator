@@ -25,7 +25,7 @@ except AttributeError:
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName(_fromUtf8("Form"))
-        Form.resize(340, 343)
+        Form.resize(341, 352)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -48,6 +48,11 @@ class Ui_Form(object):
         self.displayScreen.setFrameShadow(QtGui.QFrame.Plain)
         self.displayScreen.setObjectName(_fromUtf8("displayScreen"))
         self.verticalLayout.addWidget(self.displayScreen)
+        self.line = QtGui.QFrame(Form)
+        self.line.setFrameShape(QtGui.QFrame.HLine)
+        self.line.setFrameShadow(QtGui.QFrame.Sunken)
+        self.line.setObjectName(_fromUtf8("line"))
+        self.verticalLayout.addWidget(self.line)
         self.horizontalLayout = QtGui.QHBoxLayout()
         self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
         self.gridLayout = QtGui.QGridLayout()
@@ -177,7 +182,7 @@ class Ui_Form(object):
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Cantarell\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:20pt;\"><br /></p></body></html>", None))
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.number9Button.setText(_translate("Form", "9", None))
         self.pushButton_11.setText(_translate("Form", ".", None))
         self.number6Button.setText(_translate("Form", "6", None))

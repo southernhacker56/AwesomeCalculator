@@ -1,6 +1,6 @@
 import sys
 import constants
-from PyQt4 import QtCore, QtGui
+from PyQt4 import QtGui
 from awesome_calculator_layout import Ui_Form
 
 
@@ -8,6 +8,7 @@ from awesome_calculator_layout import Ui_Form
 class CalculatorApp(QtGui.QWidget):
     # Private member for the Calculator App
     b_result_is_value1 = False
+    s_display_style = "<p align=\"right\" style=\"font-family:\'Cantarell\'; font-weight:400; font-size:20pt;\">{0}</p>"
     n_display_value = constants.NUMBER_VALUE_NONE
     n_value1 = constants.NUMBER_VALUE_NONE
     n_value2 = constants.NUMBER_VALUE_NONE
@@ -47,7 +48,7 @@ class CalculatorApp(QtGui.QWidget):
         self.ui.clearButton.clicked.connect(lambda: self.clear())
 
     def print_value(self):
-        self.ui.displayScreen.setText(str(self.n_display_value))
+        self.ui.displayScreen.setText(self.s_display_style.format(str(self.n_display_value)))
 
     # Handle the numerical value
     def numerical_input_handle(self):
@@ -106,7 +107,7 @@ class CalculatorApp(QtGui.QWidget):
 
     # Inverse the display value
     def inverse_display_value(self):
-        if self.b_result_is_value1:
+        if self.b_result_is_value1 or self.n_display_value is constants.NUMBER_VALUE_NONE:
             return
 
         n_temp_value = self.n_display_value
